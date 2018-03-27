@@ -124,7 +124,9 @@ public class JVisitor {
 
   public JNode accept(JNode node, boolean allowRemove) {
     try {
-      node.traverse(this, UNMODIFIABLE_CONTEXT);
+      if (node != null) {
+        node.traverse(this, UNMODIFIABLE_CONTEXT);
+      }
       return node;
     } catch (Throwable e) {
       throw translateException(node, e);

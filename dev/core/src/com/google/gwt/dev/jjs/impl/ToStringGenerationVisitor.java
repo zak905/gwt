@@ -735,11 +735,13 @@ public class ToStringGenerationVisitor extends TextOutputVisitor {
       print("\"");
       print(x.getRequestedValue());
       print("\"");
-      if (x.getResultValues().get(0) != null) {
-        print(",");
-        print("\"");
-        print(x.getResultValues().get(0));
-        print("\"");
+      if (x.getResultValues() != null) {
+        if (x.getResultValues().get(0) != null) {
+          print(",");
+          print("\"");
+          print(x.getResultValues().get(0));
+          print("\"");
+        }
       }
       print(")");
     }
